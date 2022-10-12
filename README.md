@@ -138,22 +138,6 @@ Examples:
 ]
 ```
 
-### Comma Elision
-
-You can omit commas if values are on separate lines. Example:
-
-```omlet
-[
-    foo
-    "bar"
-    (
-        baz
-    )
-]
-```
-
-...is equivalent to `[foo, bar, baz]`.
-
 ## Maps
 
 A _Map_ is an ordered sequence of key-value pairs. Each key-value pair is called an _entry_.
@@ -161,46 +145,41 @@ A _Map_ is an ordered sequence of key-value pairs. Each key-value pair is called
 - Write each entry as `key: value`
   - `key` must be a String
   - `value` may be any datatype
-- Separate the entries with `,`
-- Enclose the entirety of comma-separated-values with `{` and `}`.
-- Trailing commas are supported, and highly encouraged for multi-line maps.
+- Insert a linebreak after each entry.
 
 Simple example:
 
 ```
 {
-    full name: Jane Smith,
+    full name: Jane Smith
     degrees: [
         B.S. in Computer Science from the University of Skaborfen,
         B.S. in Computer Science from the University of Mlatcad,
     ],
     family: {
-        father: Rob Smith,
-        mother: Susan Smith,
-        husband: John Doe,
+        father: Rob Smith
+        mother: Susan Smith
+        husband: John Doe
     },
 }
 ```
 
-### Comma Elision
+### Single-line Map Syntax
 
-You can omit commas if values are on separate lines. Example:
+You also have the option of writing a one-line map, by separating
+entries with commas.
+
+Example:
 
 ```omlet
-{
-    full name: Ann Doe
-    age: 22
-    family: {
-        father: Bill Doe
-        mother: Regina Doe
-        brother: Jim Doe
-    }
-}
+{ r: 255, g: 128, b: 0 }
 ```
+
+Trailing commas are forbidden. For multi-line maps, you cannot use commas (instead, entries must be separated by linebreaks).
 
 ## File top-level values
 
-The file's top-level value can be any type. For example, all 3 of the below files are valid Omlet files:
+The file's top-level value can be any type. For example, all of the below examples are valid Omlet files:
 
 `my_awesome_string.omlet`:
 
@@ -217,28 +196,38 @@ The file's top-level value can be any type. For example, all 3 of the below file
 `my_awesome_map.omlet`:
 
 ```omlet
+{ r: 0, g: 128, b: 255 }
+```
+
+`my_verbose_map.omlet`:
+
+```omlet
 {
-    r: 0,
-    "g": 128,
+    r: 0
+    "g": 128
     (
         b
-    ): 255,
+    ): 255
 }
 ```
 
-### `{}` Elision
+### Top-level `{}` Elision
 
-If a file's top-level value is a `Map`, you may omit the `{}`. Example:
+If a file's top-level value is a multi-line `Map`, you may omit the `{}`. Example:
+
+Instead of...
 
 `package.omlet`:
 
 ```omlet
-version: 1.0.0,
-name: "omlet-parser",
-license: "MIT",
+{
+    version: 1.0.0
+    name: "omlet-parser"
+    license: "MIT"
+}
 ```
 
-...or, if we also make use of comma elision:
+...we can simplify it to:
 
 ```omlet
 version: 1.0.0
