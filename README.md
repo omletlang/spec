@@ -209,7 +209,7 @@ winter,
 
 Similarly, if the top-level value is a `Map`, you may omit the `{}`. Example:
 
-`seasons.omlet`:
+`package.omlet`:
 
 ```omlet
 version: 1.0.0,
