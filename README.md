@@ -228,6 +228,8 @@ The file's top-level value can be any type. For example, all 3 of the below file
 
 ### Delimiter Elision
 
+#### `[]` Elision
+
 If the top-level value is a `List`, you may omit the `[]`. Example:
 
 `seasons.omlet`:
@@ -239,6 +241,17 @@ fall,
 winter,
 ```
 
+...or, if we also make use of comma elision:
+
+```omlet
+spring
+summer
+fall
+winter
+```
+
+#### `{}` Elision
+
 Similarly, if the top-level value is a `Map`, you may omit the `{}`. Example:
 
 `package.omlet`:
@@ -247,4 +260,12 @@ Similarly, if the top-level value is a `Map`, you may omit the `{}`. Example:
 version: 1.0.0,
 name: "omlet-parser",
 license: "MIT",
+```
+
+...or, if we also make use of comma elision:
+
+```omlet
+version: 1.0.0
+name: "omlet-parser"
+license: "MIT"
 ```
