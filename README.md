@@ -156,12 +156,12 @@ Simple example:
     degrees: [
         B.S. in Computer Science from the University of Skaborfen,
         B.S. in Computer Science from the University of Mlatcad,
-    ],
+    ]
     family: {
         father: Rob Smith
         mother: Susan Smith
         husband: John Doe
-    },
+    }
 }
 ```
 
