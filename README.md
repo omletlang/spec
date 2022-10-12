@@ -46,13 +46,14 @@ There are several restrictions on the types of strings you can express as a Simp
 
 Summary: Surround the string in quotes.
 
-For example, if I wanted to express the string "John", I would write
+For example, if I wanted to express the string " John " (i.e., "John" with a space on each side), I would write
 
 ```omlet
-"John"
+" John "
 ```
 
-You cannot use linebreaks, `"`, or `\` without escaping them.
+A Quoted String cannot contain literal linebreaks, `"`, or `\`.
+If you want to include those characters, you must escape them.
 
 Escape sequences:
 
