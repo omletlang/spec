@@ -223,8 +223,8 @@ Instead of...
 ```omlet
 {
     version: 1.0.0
-    name: "omlet-parser"
-    license: "MIT"
+    name: omlet-parser
+    license: MIT
 }
 ```
 
@@ -232,6 +232,6 @@ Instead of...
 
 ```omlet
 version: 1.0.0
-name: "omlet-parser"
-license: "MIT"
+name: omlet-parser
+license: MIT
 ```
