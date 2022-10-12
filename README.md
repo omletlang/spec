@@ -38,7 +38,7 @@ There are several restrictions on the types of strings you can express as a Simp
 
    In addition, space (U+0020) is allowed.
 
-2. The following characters `{}[],:` are forbidden.
+2. The following characters `(){}[],:` are forbidden.
 3. Consecutive (i.e., 2 or more adjacent) spaces are forbidden.
 4. Leading and trailing spaces are forbidden (they will be ignored by the parser).
 
@@ -138,6 +138,22 @@ Examples:
 ]
 ```
 
+### Comma Elision
+
+You can omit commas if values are on separate lines. Example:
+
+```omlet
+[
+    foo
+    "bar"
+    (
+        baz
+    )
+]
+```
+
+...is equivalent to `[foo, bar, baz]`.
+
 ## Maps
 
 A _Map_ is an ordered sequence of key-value pairs. Each key-value pair is called an _entry_.
@@ -163,6 +179,22 @@ Simple example:
         mother: Susan Smith,
         husband: John Doe,
     },
+}
+```
+
+### Comma Elision
+
+You can omit commas if values are on separate lines. Example:
+
+```omlet
+{
+    full name: Ann Doe
+    age: 22
+    family: {
+        father: Bill Doe
+        mother: Regina Doe
+        brother: Jim Doe
+    }
 }
 ```
 
