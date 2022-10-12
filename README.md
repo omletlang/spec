@@ -38,7 +38,7 @@ There are several restrictions on the types of strings you can express as a Simp
 
    In addition, space (U+0020) is allowed.
 
-2. The following characters `{}[],` are forbidden.
+2. The following characters `{}[],:` are forbidden.
 3. Consecutive (i.e., 2 or more adjacent) spaces are forbidden.
 4. Leading and trailing spaces are forbidden (they will be ignored by the parser).
 
@@ -166,23 +166,23 @@ Simple example:
 }
 ```
 
-## What's at the file top-level?
+## File top-level values
 
-Any type is permitted. For example, all 3 of the below files are valid Omlet files:
+The file's top-level value can be any type. For example, all 3 of the below files are valid Omlet files:
 
-`a.omlet`:
+`my_awesome_string.omlet`:
 
 ```omlet
 "Just a string :)"
 ```
 
-`b.omlet`:
+`my_awesome_list.omlet`:
 
 ```omlet
 [Top, { level: list }]
 ```
 
-`c.omlet`:
+`my_awesome_map.omlet`:
 
 ```omlet
 {
@@ -192,4 +192,27 @@ Any type is permitted. For example, all 3 of the below files are valid Omlet fil
         b
     ): 255,
 }
+```
+
+### Delimiter Elision
+
+If the top-level value is a `List`, you may omit the `[]`. Example:
+
+`seasons.omlet`:
+
+```omlet
+spring,
+summer,
+fall,
+winter,
+```
+
+Similarly, if the top-level value is a `Map`, you may omit the `{}`. Example:
+
+`seasons.omlet`:
+
+```omlet
+version: 1.0.0,
+name: "omlet-parser",
+license: "MIT",
 ```
